@@ -1,0 +1,2 @@
+[1] concurrent.futures.ThreadPoolExecutor
+https://abdulrwahab.medium.com/python-threadpoolexecutor-use-cases-for-parallel-processing-3d5c90fd5634

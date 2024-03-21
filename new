@@ -1,4 +1,4 @@
-_id,Fiscal_Year,Fiscal_Period,Month,Information_Date,Branch,Service,SSC_Client,Metric_Name,Value,Metric_Type
+_id,Fiscal Year,Fiscal Period,Month,Information Date,Branch,Service,SSC Client,Metric Name,Value,Metric Type
 1,2017-2018,1,April,4/30/2017,Data Centre Services,Data Centre Facilities - Enterprise,EDC Barrie,% of time SSC Enterprise Data Centres Facilities are available,100.0,Non Cumulative
 2,2017-2018,1,April,4/30/2017,Data Centre Services,Data Centre Facilities - Enterprise,EDC Barrie,Contracted Power Capacity (kVA),1000.0,Non Cumulative
 3,2017-2018,1,April,4/30/2017,Data Centre Services,Data Centre Facilities - Enterprise,EDC Barrie,Power Consumption Rate (kVA),139.0,Non Cumulative
@@ -843,7 +843,7 @@ _id,Fiscal_Year,Fiscal_Period,Month,Information_Date,Branch,Service,SSC_Client,M
 842,2021-2022,12,March,3/31/2022,Data Centre Services,Data Centre Facilities - Enterprise,EDC Gatineau,Power Consumption Rate (kVA),1068.0,Non Cumulative
 843,2021-2022,12,March,3/31/2022,Data Centre Services,Data Centre Facilities - Enterprise,EDC Barrie,Square Footage,5988.0,As at
 844,2021-2022,12,March,3/31/2022,Data Centre Services,Data Centre Facilities - Enterprise,EDC Montreal,Power Consumption Rate (kVA),340.0,Non Cumulative
-845,2022-2023,P01-Apr,April,2022-04-30,Data Centre Services,Data Centre Facilities - Enterprise,EDC Gatineau,% of time SSC Enterprise Data Centres Facilities are available,100.0,Non Cumulative
+845,2022-2023,P01-Apr,April,2022-04-31,Data Centre Services,Data Centre Facilities - Enterprise,EDC Gatineau,% of time SSC Enterprise Data Centres Facilities are available,100.0,Non Cumulative
 846,2022-2023,P01-Apr,April,2022-04-31,Data Centre Services,Data Centre Facilities - Enterprise,EDC Gatineau,Square Footage,13316.0,As at
 847,2022-2023,P01-Apr,April,2022-04-31,Data Centre Services,Data Centre Facilities - Enterprise,EDC Barrie,Square Footage,5988.0,As at
 848,2022-2023,P01-Apr,April,2022-04-31,Data Centre Services,Data Centre Facilities - Enterprise,EDC Gatineau,Power Consumption Rate (kVA),1249.0,Non Cumulative

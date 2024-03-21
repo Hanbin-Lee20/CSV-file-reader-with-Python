@@ -1,4 +1,0 @@
-_id,Fiscal Year,Fiscal Period,Month,Information Date,Branch,Service,SSC Client,Metric Name,Value,Metric Type
-1,2017-2018,1,April,4/30/2017,Data Centre Services,Data Centre Facilities - Enterprise,EDC Barrie,% of time SSC Enterprise Data Centres Facilities are available,100,Non Cumulative
-2,2017-2018,1,April,4/30/2017,Data Centre Services,Data Centre Facilities - Enterprise,EDC Barrie,Contracted Power Capacity (kVA),1000,Non Cumulative
-3,2017-2018,1,April,4/30/2017,Data Centre Services,Data Centre Facilities - Enterprise,EDC Barrie,Power Consumption Rate (kVA),139,Non Cumulative
