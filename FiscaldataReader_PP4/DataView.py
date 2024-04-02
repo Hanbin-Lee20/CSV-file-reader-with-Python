@@ -1,11 +1,11 @@
 # Student name: Hanbin Lee
 # Course: CST8333 - Programming Language Research Project
-# Assignment name: Practical project 03
+# Assignment name: Practical project 04
 # File name: DataView.py
 
 from DataController import Controller
 from DataModel import Model
-import threading
+import pandas as pd
 
 class View:
 
@@ -20,7 +20,7 @@ class View:
         Initializes the View.
         """
         # This is file path for given dataset.
-        file_path = './Fiscaldatareader_PP3/DataCentreAvailability.csv'
+        file_path = './Fiscaldatareader_PP4/DataCentreAvailability.csv'
         # An instance of the Model class.
         self.model = Model(file_path)
         # An instance of the Controller class.
@@ -39,11 +39,13 @@ class View:
         if not records:
             return
         
+        limited_records = records[:300]
+
         # Header on the top
-        header_info = ", ".join(vars(records[0]).keys())
+        header_info = ", ".join(vars(limited_records[0]).keys())
         print(header_info)
         # Iterates over the records, printing each one.
-        for index, record in enumerate(records, start=1):
+        for index, record in enumerate(limited_records, start=1):
             record_info = ", ".join(f"{key}: {value}" for key, value in vars(record).items())
             print(record_info)
 
@@ -83,6 +85,7 @@ Enter the name (Leave empty when your done): """)
                 print("Record updated successfully.")
         else:
             print("No updates made.")
+        self.display_specific_record(row_id)
 
     def create_new_record(self):
         """
@@ -108,8 +111,11 @@ Enter the name (Leave empty when your done): """)
             value = input(f"{column}: ")
             new_row[column] = value
         
+        
         self.controller.add_row_threaded(new_row)
-        print("New record added successfully.")
+        new_max = int(self.controller.get_max_id())
+        self.display_specific_record(new_max)
+        print("Record created successfully.")
 
     def delete_record(self):
         """
@@ -130,12 +136,42 @@ Enter the name (Leave empty when your done): """)
             print(f"Error occurred : {e}")
 
     def display_specific_record(self, record_id):
+        """
+        Displays a single row of data, using record_id.
+        """
         record = self.controller.get_row_by_id(record_id)
         if record is not None:
             print("Record retrieved successfully:")
             print(record)
         else:
             print(f"No row found with ID: {record_id}")
+
+    def sort_records(self):
+
+        """
+        Allows user to sort the result based on the column name and order (asc or desc).
+        User may enter single or multiple numbers of column(s).
+        Then, enter order type for each columns.
+        """
+        
+        pd.set_option('display.max_rows', 900)
+        pd.set_option('display.min_rows', 100)
+        
+        columns_input = input("Enter the columns to sort by (separated by commas): ").split(', ')
+        columns_order = input("Enter the order of sorting (asc or desc, comma-separated): ").split(', ')
+        ascending = [order.strip().lower() == 'asc' for order in columns_order]
+
+        sorted_df = self.controller.sort_records(columns_input, ascending)
+        
+        print("Programmed by Hanbin Lee")
+        if sorted_df is not None:
+            print(sorted_df)
+        else:
+            print("""
+                    Column name not found.
+                    Please enter correct column name.
+                  """)
+        
 
     def menu(self):
         """
@@ -161,9 +197,9 @@ What do you want to do?
 (3) Create a new record in the existing file
 (4) Select and edit a record from existing file
 (5) Select and delete a record from existing file
-(6) Exit program
+(6) Select column(s) and order(s)
+(7) Exit program
 """)
-            
             choice = input("Enter the option: ")
 
             if choice == "1":
@@ -171,6 +207,9 @@ What do you want to do?
                 self.display_records(self.controller.get_records())
             elif choice == "2":
                 confirm = input("Is it ok to reload all the data? Y or N: ").strip().lower()
+                print("Reloaded data:")
+                self.controller.display_threaded()
+                self.display_records(self.controller.get_records())
                 if confirm == 'y':
                     self.controller.reloading_threaded()
                 else:
@@ -181,14 +220,9 @@ What do you want to do?
                 self.edit_record()
             elif choice == "5":
                 self.delete_record()
-            elif choice ==  "test":
-                print("Before reloading:\n")
-                self.display_specific_record(2)
-                input("Manually edit the CSV file now to change the record's data. Press Enter when done.")
-                self.controller.reloading_threaded()
-                print("\nAfter reloading:")
-                self.display_specific_record(2)
             elif choice == "6":
+                self.sort_records()
+            elif choice == "7":
                 print("Exiting program.")
                 break   
             else:

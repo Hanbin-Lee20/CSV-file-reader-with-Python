@@ -1,0 +1,2 @@
+[1] displaying every row of data, https://pandas.pydata.org/docs/user_guide/options.html
+[2] 

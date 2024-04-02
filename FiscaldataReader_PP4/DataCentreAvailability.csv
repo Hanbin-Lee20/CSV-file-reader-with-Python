@@ -1,6 +1,6 @@
 _id,Fiscal Year,Fiscal Period,Month,Information Date,Branch,Service,SSC Client,Metric Name,Value,Metric Type
 1,2017-2018,1,April,4/30/2017,Data Centre Services,Data Centre Facilities - Enterprise,EDC Barrie,% of time SSC Enterprise Data Centres Facilities are available,100.0,Non Cumulative
-2,2017-2018,1,April,4/30/2017,Data Centre Services,Data Centre Facilities - Enterprise,EDC Barrie,Contracted Power Capacity (kVA),1000.0,Non Cumulative
+2,2017-2018,1,May,4/30/2017,Data Centre Services,Data Centre Facilities - Enterprise,EDC Barrie,Contracted Power Capacity (kVA),1000.0,Non Cumulative
 3,2017-2018,1,April,4/30/2017,Data Centre Services,Data Centre Facilities - Enterprise,EDC Barrie,Power Consumption Rate (kVA),139.0,Non Cumulative
 4,2017-2018,1,April,4/30/2017,Data Centre Services,Data Centre Facilities - Enterprise,EDC Barrie,Square Footage,5998.0,As at
 5,2017-2018,1,April,4/30/2017,Data Centre Services,Data Centre Facilities - Enterprise,EDC Borden,% of time SSC Enterprise Data Centres Facilities are available,100.0,Non Cumulative
@@ -1163,3 +1163,6 @@ _id,Fiscal Year,Fiscal Period,Month,Information Date,Branch,Service,SSC Client,M
 1162,2023-2024,P08-Nov,November,11/30/2023,data Centre Services,Data Centre Facilities - Enterprise,EDC Gatineau,Power Consumption Rate (kVA),1169.0,Non Cumulative
 1163,2023-2024,P08-Nov,November,11/30/2023,data Centre Services,Data Centre Facilities - Enterprise,EDC Gatineau,Contracted Power Capacity (kVA),1750.0,Non Cumulative
 1164,2023-2024,P08-Nov,November,11/30/2023,data Centre Services,Data Centre Facilities - Enterprise,EDC Barrie,% of time SSC Enterprise Data Centres Facilities are available,100.0,Non Cumulative
+1165,qrw,qrw,June,wq,rqw,rq,w,wrq,qrw,qrw
+1166,2020-2021,4,July,7/31/2020,Test Branch,Test Service,Test Client,Test Metric,100,Test Type
+1167,2020-2021,4,mymonth,7/31/2020,Test Branch,Test Service,Test Client,Test Metric,100,Test Type

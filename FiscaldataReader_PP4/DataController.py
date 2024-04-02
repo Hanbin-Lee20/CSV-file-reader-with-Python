@@ -1,6 +1,6 @@
 # Student name: Hanbin Lee
 # Course: CST8333 - Programming Language Research Project
-# Assignment name: Practical project 03
+# Assignment name: Practical project 04
 # File name: DataController.py
 
 from DataRecord import DataCentreRecord
@@ -8,7 +8,7 @@ import threading
 import pandas as pd
 
 # Load the dataset from a CSV file into a pandas DataFrame.
-datasetData = pd.read_csv("FiscaldataReader_PP3\DataCentreAvailability.csv")
+datasetData = pd.read_csv("FiscaldataReader_PP4\DataCentreAvailability.csv")
 
 class Controller:
 
@@ -118,5 +118,12 @@ class Controller:
         else:
             return 0
 
-
+    def sort_records(self, columns, ascending):
+        """Sorts the records based on the given columns and orders."""
+        try:
+            sorted_df = self.model.sort_record(columns, ascending)
+            return sorted_df
+        except Exception as e:
+            print(f"Error while sorting records: {e}")
+            return None
     

@@ -1,12 +1,12 @@
 # Student name: Hanbin Lee
 # Course: CST8333 - Programming Language Research Project
-# Assignment name: Practical project 03
+# Assignment name: Practical project 04
 # File name: DataModel.py
 
 import pandas as pd
 
 # Load the dataset from a CSV file into a pandas DataFrame.
-datasetData = pd.read_csv("Fiscaldatareader_PP3\DataCentreAvailability.csv")
+datasetData = pd.read_csv("Fiscaldatareader_PP4\DataCentreAvailability.csv")
 
 class Record:
     """
@@ -45,7 +45,7 @@ class Model:
     """
 
     # This is file path for given dataset.
-    file_path = "Fiscaldatareader_PP3\DataCentreAvailability.csv"
+    file_path = "Fiscaldatareader_PP4\DataCentreAvailability.csv"
 
     def __init__(self, file_path):
 
@@ -151,14 +151,16 @@ class Model:
         # Ensure new_row is a dictionary and has at least one key-value pair
         if not isinstance(new_row, dict) or not new_row:
             print("Invalid row data provided.")
-            return False
+            return None
         
         # Append the new row to the DataFrame
+        new_row_df = pd.DataFrame([new_row])
         self.datasetData = self.datasetData._append(new_row, ignore_index=True)
         
         # Save the updated DataFrame back to the CSV
         self.save_data()
-        return True
+        return self.datasetData.iloc[-1]
+
     
     def delete_record(self, row_id):
         """
@@ -174,3 +176,14 @@ class Model:
             return True
         else:
             return False
+        
+    def sort_record(self, columns, ascending):
+        """
+        Sort result based on column names and order types by user.
+
+        param columns: list of column names to sort by
+        param ascending: list of boolean values indicating ascending order or descending order
+        return: sorted DataFrame
+        """
+        return self.datasetData.sort_values(by=columns, ascending=ascending)
+        
