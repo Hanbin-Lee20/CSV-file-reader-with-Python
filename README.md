@@ -11,7 +11,7 @@
   Version 1, the program displays all the records of the .csv file.<br><br>
   Version 2, the program provides CRUD, refresh and reading single or multiple data option.<br><br>
   Version 3, reading single or multiple data option is removed and now the program uses thread for each operation.<br><br>
-  Version 4, 2 new options' added: Sorting the result before display and writting to a new text file.<br><br>
+  Version 4, 2 new options' added: Sorting the result before display and writing to a new text file.<br><br>
 
   *Unit testing that adds new data working correctly.
 </p>
